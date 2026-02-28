@@ -13,7 +13,7 @@ import { Media } from '@/types/media';
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [media, setMedia] = useState<Media[]>(initialMediaData);
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded] = useState(true);
 
   
   const loadMore = () => {
