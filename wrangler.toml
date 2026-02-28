@@ -1,0 +1,35 @@
+name = "infinite-media-reel"
+compatibility_date = "2024-02-08"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "infinite-media-reel"
+
+[env.preview]
+name = "infinite-media-reel-preview"
+
+# Build configuration for static export
+[build]
+command = "npm run build"
+
+# Directory containing the built static application
+[build.upload]
+format = "modules"
+dir = "out"
+rules = [
+  { type = "ESModule", globs = ["**/*.js"] }
+]
+
+# Static assets
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Environment variables
+[vars]
+NODE_ENV = "production"
+
+# Next.js specific configuration
+[[build.rules]]
+type = "ESModule"
+globs = ["**/*.js"]
