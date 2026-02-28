@@ -1,6 +1,5 @@
 name = "card-s"
 compatibility_date = "2024-02-08"
-compatibility_flags = ["nodejs_compat"]
 
 [env.production]
 name = "card-s"
@@ -8,14 +7,9 @@ name = "card-s"
 [env.preview]
 name = "card-s-preview"
 
-# Build configuration for static export
-[build]
-command = "npm run build"
-
-# Directory containing the built static application
-[build.upload]
-format = "modules"
-dir = "out"
+# Assets directory for static files
+[assets]
+directory = "./out"
 
 # Environment variables
 [vars]
